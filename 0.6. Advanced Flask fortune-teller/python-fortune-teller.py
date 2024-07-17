@@ -10,7 +10,7 @@ def fortune ():
 	 possible_fortunes = ["You will get outstanding IN CS" , 
 	 "You are sentenced to IASA food FOR life", "You will catch Lilach the dragon" , 
 	 "You will be the best entrepreneurship instructor" , 
-	 "You will get the best meet laptop, You are the NEXT Y3 lead", 
+	 "You will get the best meet laptop", "You are the NEXT Y3 lead", 
 	 "You will become a president one day", "You will own the biggest company", 
 	 "You will strart a non-profit organization and help save the world by planting trees", 
 	 "You will have no wifi connection"]     
