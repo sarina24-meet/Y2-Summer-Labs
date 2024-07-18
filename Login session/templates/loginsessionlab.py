@@ -32,8 +32,6 @@ def fortune(name):
 	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
 
 
-@app.route('/', methods=['GET', 'POST'])  
-
 def login(): 
     if request.method == 'POST': 
         session['username'] = request.form['username']
@@ -46,7 +44,7 @@ def login():
 def user_welcome(): 
     if 'username' in session and 'birth_month' in session:
         return render_template('log_in1.html', username=session['username'])
-    return redirect(url_for('login')) 
+    return redirect(url_for('log_in1'))  
 
 @app.route('/fortune2')
 def fortune2(): 
