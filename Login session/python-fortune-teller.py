@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for 
-import random   
+import random  
 app = Flask(__name__, template_folder = "templates") 
 @app.route ("/home", methods=['GET', 'POST'])   
 def home (): 
@@ -8,7 +8,6 @@ def home ():
 	else: 
 		name = request.form['birthMN'] 
 		return redirect(url_for('fortune', name=name))   
-
 
 @app.route("/fortune/<name>")    
 def fortune(name): 
@@ -26,6 +25,11 @@ def fortune(name):
 	 else : 
 	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
 
+
+
+
+
+
 # @app.route ("/indecisive")
 # def indecisive ():  
 # 		indecisive_fortunes = ["You will get outstanding IN CS" , 
@@ -37,6 +41,11 @@ def fortune(name):
 # 	 "You will have no wifi connection"] 
 # 	  sample(random_number) = random.randint(0,9) 
  
+# @app.route ("/design")
+# def design (): 
+# 	return '''<html> 
+# 		<img src = "https://t3.ftcdn.net/jpg/01/09/07/98/360_F_109079871_OigjZSPKSyTu7ap2nD3no18RjkLIH4eV.jpg" width = "400"> 
+# 		</html> ''' 
 
 
 

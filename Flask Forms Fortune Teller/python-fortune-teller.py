@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from flask import session as login_session  
 import random   
 app = Flask(__name__, template_folder = "templates") 
+app.config['SECRET_KEY'] = "Your_secret_string" 
+
 @app.route ("/home")  
 def home (): 
 	return render_template("home.html") 

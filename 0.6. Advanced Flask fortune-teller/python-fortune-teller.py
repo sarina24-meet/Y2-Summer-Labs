@@ -4,6 +4,8 @@ app = Flask(__name__, template_folder = "templates")
 @app.route ("/home")  
 def home (): 
 	return render_template("home.html") 
+		
+		
 
 @app.route ("/fortune") 
 def fortune (): 
@@ -18,6 +20,7 @@ def fortune ():
 	 return render_template("fortune.html", fortune = possible_fortunes[random_number])   
 
 
+	
 
 
 

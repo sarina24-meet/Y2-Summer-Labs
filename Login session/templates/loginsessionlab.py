@@ -1,6 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for 
-import random   
+from flask import Flask, render_template, request, redirect, url_for, session 
+import random 
+from flask import session as login_session  
+ 
+
 app = Flask(__name__, template_folder = "templates") 
+
+app.config['SECRET_KEY'] = "Your_secret_string" 
+
 @app.route ("/home", methods=['GET', 'POST'])   
 def home (): 
 	if request.method == 'GET':  
@@ -8,7 +14,6 @@ def home ():
 	else: 
 		name = request.form['birthMN'] 
 		return redirect(url_for('fortune', name=name))   
-
 
 @app.route("/fortune/<name>")    
 def fortune(name): 
@@ -21,10 +26,46 @@ def fortune(name):
 	 "You will have no wifi connection"]     
 	 random_number = random.randint(0,9) 
 	 index = len(name) 
-	 if index > 10:
+	 if index > 10: 
 	 	return render_template("fortune.html", fortune = "Error, index number too high")   
 	 else : 
 	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
+
+
+@app.route('/', methods=['GET', 'POST'])  
+
+def login(): 
+    if request.method == 'POST': 
+        session['username'] = request.form['username']
+        session['birth_month'] = request.form['birth_month'] 
+        return redirect(url_for('user_welcome'))
+    return render_template('log_in1.html') 
+
+
+@app.route('/user_welcome')   
+def user_welcome(): 
+    if 'username' in session and 'birth_month' in session:
+        return render_template('log_in1.html', username=session['username'])
+    return redirect(url_for('login')) 
+
+@app.route('/fortune2')
+def fortune2(): 
+    if 'username' in session and 'birth_month' in session:
+        fortune = random.choice(possible_fortunes)
+        session['fortune2'] = fortune
+        return render_template('fortune2.html', username=session['username'], fortune=fortune)
+    return redirect(url_for('login')) 
+
+# @app.route ("/name", methods = ['GET', 'POST']) 
+# def name  : 
+# 	if request.method == 'POST' 
+# 	username = request.form['username'] 
+#     if username == 'admin':
+#           login_session['admin'] = True 
+#        return redirect(url_for('home'))
+#    return render_template("login.html") 
+
+
 
 # @app.route ("/indecisive")
 # def indecisive ():  
@@ -37,6 +78,11 @@ def fortune(name):
 # 	 "You will have no wifi connection"] 
 # 	  sample(random_number) = random.randint(0,9) 
  
+# @app.route ("/design")
+# def design (): 
+# 	return '''<html> 
+# 		<img src = "https://t3.ftcdn.net/jpg/01/09/07/98/360_F_109079871_OigjZSPKSyTu7ap2nD3no18RjkLIH4eV.jpg" width = "400"> 
+# 		</html> ''' 
 
 
 
