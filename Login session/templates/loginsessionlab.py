@@ -30,8 +30,7 @@ def fortune(name):
 	 	return render_template("fortune.html", fortune = "Error, index number too high")   
 	 else : 
 	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
-
-
+	 	
 def login(): 
     if request.method == 'POST': 
         session['username'] = request.form['username']
