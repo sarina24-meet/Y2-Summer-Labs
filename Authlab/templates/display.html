@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>Display Quotes</title>
+            
+</head> 
+
+<body> 
+
+    <h1>Quotes</h1> 
+
+{{(session['quotes'])}} 
+
+<ul> 
+    {% for quote in quotes %}
+    <li>{{ quote }}</li>
+    {% endfor %} 
+
+</ul>
+
+<a href="{{ url_for('home') }}"> Back to Home</a>
+
+</body>
+
+</html> 

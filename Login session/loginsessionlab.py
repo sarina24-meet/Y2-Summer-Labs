@@ -13,7 +13,7 @@ def home ():
 		return render_template("home.html") 
 	else: 
 		name = request.form['birthMN'] 
-		return redirect(url_for('fortune2', name=name))   
+		return redirect(url_for('fortune', name=name))   
 
 @app.route("/fortune/<name>")    
 def fortune(name): 
@@ -30,15 +30,13 @@ def fortune(name):
 	 	return render_template("fortune.html", fortune = "Error, index number too high")   
 	 else : 
 	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
-
-
-@app.route ('/login') 
+	 	
 def login(): 
     if request.method == 'POST': 
         session['username'] = request.form['username']
         session['birth_month'] = request.form['birth_month'] 
         return redirect(url_for('user_welcome'))
-    return render_template('fortune2.html') 
+    return render_template('log_in1.html') 
 
 
 @app.route('/user_welcome')   
