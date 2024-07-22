@@ -2,7 +2,6 @@
 <html>
 <head>
 
-
     <title>Display Quotes</title>
             
 </head> 
@@ -14,14 +13,14 @@
 {{(session['quotes'])}} 
 
 <ul> 
-    {% for quote in quotes %}
-    <li>{{ quote }}</li>
+    {% for quote in quotes.values()%}
+    <li>{{ quote['quote'] }} by {{quote['said_by']}}</li>
     {% endfor %} 
 
+
+
 </ul>
-
 <a href="{{ url_for('home') }}"> Back to Home</a>
-
 </body>
 
 </html> 

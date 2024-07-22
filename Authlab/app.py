@@ -13,21 +13,27 @@ firebaseConfig= {
   "messagingSenderId": "1078110054181",
   "appId": "1:1078110054181:web:54f9a6eec87bebf79fdccc",
   "measurementId": "G-60K4ZHGVYB", 
-  "databaseURL":"" 
-} 
+  "databaseURL":"https://authlab-79d93-default-rtdb.europe-west1.firebasedatabase.app/" 
+}  
 
 firebase = pyrebase.initialize_app(firebaseConfig)  
 auth = firebase.auth()  
+db =firebase.database() 
 
 
-@app.route ("/", methods = ['GET', 'POST'])
-@app.route ("/signup", methods = ['GET', 'POST'])  
+
+@app.route ("/", methods = ['GET', 'POST']) 
+@app.route ("/signup", methods = ['GET', 'POST']) 
 def signup (): 
   if request.method == "POST" :  
     email = request.form['email'] 
+    full_name = request.form ['full_name'] 
+    username = request.form ['username']
     password = request.form['password'] 
     login_session['user'] = auth.create_user_with_email_and_password(email, password) 
-    login_session['quotes'] = [] 
+    user = {"full_name" : full_name, "email" : email, "username" : username}    
+    UID = login_session['user']['localId']
+    db.child("Users").child(UID).set(user)   
     return(redirect(url_for('home')))  
   return render_template("signup.html") 
 
@@ -36,7 +42,7 @@ def signin ():
   if request.method == "POST" :  
     email = request.form['email'] 
     password = request.form['password']  
-    login_session['quotes'] = [] 
+    
     try:
       login_session['user'] = auth.sign_in_with_email_and_password(email, password)
       return redirect(url_for('home')) 
@@ -44,8 +50,8 @@ def signin ():
       error = "Authentication failed"
       return redirect("/error")
   else:
-    return render_template("signin.html")
- 
+    return render_template("signin.html") 
+
 
 @app.route ("/signout", methods = ['GET', 'POST'])
 def signout (): 
@@ -57,10 +63,12 @@ def signout ():
 @app.route("/home", methods = ['GET', 'POST']) 
 def home(): 
   if request.method == 'POST':
-    quote=request.form['quotes']
-    login_session['quotes'].append(quote) 
+    #quote_text=request.form['quote_text'] 
+    #said_by = request.form['said_by'] 
+    quote = {"said_by": request.form['said_by'], "quote" : request.form['quote_text'], "UID" : login_session['user']['localId']}     
     login_session.modified = True 
-    print(login_session ['quotes']) 
+    db.child("Quotes").push(quote) 
+    # print(login_session ['quotes']) 
     return redirect(url_for('thanks')) 
   return render_template('home.html') 
 
@@ -72,12 +80,14 @@ def thanks():
 
 @app.route ("/display") 
 def display (): 
-  return render_template('display.html') 
+  quotes = db.child("Quotes").get().val()   
+  return render_template('display.html', quotes = quotes)  
 
 
 @app.route("/error")  
 def error():        
   return render_template("error.html") 
+
 
 
 
