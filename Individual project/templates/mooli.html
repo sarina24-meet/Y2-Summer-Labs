@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<body> 
+<h2> <p> The Mount of Olives in Jerusalem is an important landmark, located next to the Old City of Jerusalem. This refers to the ridge located east of the Old City. It gets its name from the olive groves that at one time covered the land. A significant and meaningful landmark, the Mount of Olives in Jerusalem dates back to biblical times and is important to both Jews and Christians. The Mount of Olives also serves as an amazing climb and a breathtaking view of Jerusalem and the old city. 
+
+ </p> </h2> 
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_2k_hA4bB_VRV6C2kM5jHNby2t6VUB8z7Kw&s" width = "400"> 
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjFdEcaiNXs6W7IchB09zCohHRDSWSHeWtJg&s" width = "775"> 
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label> 
+     <select name="rating" id="rating">
+    <option value="star1">⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option> 
+    <option value = "star5">⭐⭐⭐⭐⭐</option> 
+    <input type="submit" value="Submit">   
+</form> 
+
+</body> 
+
+</html> 

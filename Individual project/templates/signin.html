@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<head>   
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design2.css')}}"> 
+</head> 
+<body>
+<center> 
+  <h1> Welcome to your tourist guide for the amazing city of Jerusalem! </h1> 
+  <h1> 
+    <form action= "/signin" method="post"> 
+     Please enter your email: <input type="email" name="email" value=""> 
+      <br> 
+      Please enter your password: <input type="password" name="password" value="">
+      <br> 
+        <input type="submit" value="Submit" id="submitButton">  
+  </form>  
+  <br> 
+  <a href = "/"> Don't have an account? Sign up here. </a> 
+  </h1>  
+
+</center> 
+
+
+</body> 
+</html> 

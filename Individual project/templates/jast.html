@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head>  
+<body> 
+<h2>  <p> Jaffa Road, also called Jaffa Street is one of the longest and oldest major streets in Jerusalem. It crosses the city from east to west, from the Old City walls to downtown Jerusalem, the western portal of Jerusalem and the Jerusalem-Tel Aviv highway. It is lined with shops, businesses, and restaurants. It joins with Ben Yehuda Street and King George Street to form the Downtown  Triangle central business district. Major landmarks along Jaffa Road are Safra Square (city hall), Zion Square, Davidka Square, the triple intersection (Hameshulash) at King George V Street and Straus Street, the Ben Yehuda Street pedestrian mall, the Mahane Yehuda market, and the Jerusalem Central Bus Station. Jaffa Road has been redeveloped as a car-free pedestrian mall served by the Jerusalem Light Rail. Enjoy the many cuisine options and one of the most special nightlife experiences in Jerusalem.  
+
+ </p> </h2>  
+
+<img src = "https://upload.wikimedia.org/wikipedia/commons/c/cd/Jaffa_road_Jerusalem_2012.jpg" width = "400"> 
+<img src = "https://torisify-dev-cdn.s3.eu-central-1.amazonaws.com/wp-content/uploads/2016/07/plh-crd-jaffa-street-light-train-night-ministry-of-tourism-2.jpg" width = "465">  
+
+
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label>
+     <select name="rating" id="rating">
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option>
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form> 
+</body> 
+</html> 

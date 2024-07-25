@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<h1> <p> The area is made up of several neighborhoods, including the colorful Mahane Yehuda Market, charming Nahalat Shiva, bustling Ben Yehuda and Yafo Streets. Each has its own unique personality and atmosphere that you won't want to miss out on. Enjoy one of the cleanest places in Jerusalem and pick from the many available activities such as unlimited dining choices, a special movie experience or a typical walk or cycling experience through the stunning streets.  </p> </h1> 
+
+<img src = "https://as2.ftcdn.net/v2/jpg/03/35/87/43/1000_F_335874328_e6SZdGwUuBVyxHanE4TKGlSFTZtcQXOv.jpg" width = "400"> 
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxgMvEYkF8lwu-n2hXfNzlgW8IkY2TROuPNg&s" width = "455"> 
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label>
+     <select name="rating" id="rating">
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option>
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form> 
+
+
+
+
+
+
+</html> 

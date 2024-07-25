@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<h1> <p> When in Jerusalem, it is absolutely worth a visit to Yad Vashem, the memorial museum for the holocaust, the museum of Islamic arts, the museum of Israel, the bloomfield science museum, the bible lands museum, the tower of David, the ticho house museum and the nahon museum of Italian Jewish art. </p> </h1> 
+
+<img src = "https://www.elal.com/magazine/wp-content/uploads/2018/07/Jerusalem-Museums-2.jpg" width = "400"> 
+<img src = "https://www.imj.org.il/sites/default/files/shrine_0.jpg" width = "489"> 
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label> 
+     <select name="rating" id="rating">
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option>
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form> 
+
+
+
+
+
+
+</html> 

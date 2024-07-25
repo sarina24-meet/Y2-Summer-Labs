@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<body> 
+<h2> 	
+<p> The Old City of Jerusalem is one of the most special places on Earth! At the heart of the Jewish, Islamic, and Christian religions, this one-kilometer area in the center of Jerusalem is beyond words and cannot be missed. The Old City is home to the Western Wall (aka Wailing Wall and in Hebrew Kotel). This is the last remaining wall of what was once the Jewish Temple. It is today the holiest site in the world for Jews. It is an equally imporant landmark for all three abrahamic religions: the Al-Aqsa mosque is the second most important mosque in the world, a symbol of unity, faith, and divine connection for Muslims. It is also  where Jesus was brought occasionally as a child, preached to the poor in his adult life, crucified at the end of his life, and resurrected by God. </p> 
+</h2> 
+
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVjdsBbvJeUnEh4Ywm51RPYdfU1P0VDNEyQg&s" width = "400"> 
+
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxe6VOGwADj56YR7tNwJEpQ5AabKbuapFBEA&s" width = "400">  
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiOgxjcCDc7KcGECfoC4vSkitQVO1cTyBnA&s" width = "300"> 
+
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+    <label for="rating">Rate your experience in stars:</label>
+  <select name="rating" id="rating"> 
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option>
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form> 
+
+
+
+
+</body> 
+</html> 

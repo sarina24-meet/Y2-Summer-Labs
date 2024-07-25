@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<body> 
+
+<h1> <p> Jerusalem offers a big menu when it comes to malls. From big malls with well-know fashion malls like Malha to a chill open walk-way like Mamilla. 
+Hadar mall located in Talpiyot, offers every store you can think of. Got bussiness? No problem, Atarot mall is there for you. </p> </h1> 
+
+<img src = "https://www.gojerusalem.com/_media/media/1035/6806.jpg" width = "400"> 
+
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqDOR-l8bcHdZckjt9axyNJdQa2OuZ_N49qQ&s" width = "550"> 
+
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label>
+     <select name="rating" id="rating">
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option> 
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form>  
+</body> 
+</html> 

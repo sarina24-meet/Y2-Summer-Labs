@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename= 'styles/design.css')}}"> 
+</head> 
+<h2> <p> Church of Annunciation, 
+The Israel Museum, Jerusalem,
+Supreme Court of Israel,
+Church of Saint Anne,
+Dome of the Rock,
+Italian Synagogue,
+Bethesda,
+Église Du Saint-sépulcre and 
+Al-Aqsa Mosque 
+The city is famous as one of the most holy in the world, housing important landmarks from a number of religions, making it have many impressive sites and wonderful architectural buildings. </p> </h2> 
+
+<img src = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/a4/d4/06/church-of-saint-peter.jpg?w=500&h=500&s=1" width = "400"> 
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXq9O9i7Pw0-j1q-LEh0g1Lz07fq_6VSKg6A&s" width = "602"> 
+
+<form action= "/review" method="POST"> 
+    <input type="text" name="review" placeholder = "Add your thoughts"> 
+     <label for="rating">Rate your experience in stars:</label>
+     <select name="rating" id="rating">
+    <option value="star1"> ⭐</option>
+    <option value="star2">⭐⭐</option>
+    <option value="star3">⭐⭐⭐</option>
+    <option value="star4">⭐⭐⭐⭐</option>
+    <option value = "star5"> ⭐⭐⭐⭐⭐ </option> 
+    <input type="submit" value="Submit">   
+</form> 
+
+
+</html> 

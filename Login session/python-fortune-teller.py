@@ -1,58 +1,28 @@
-from flask import Flask, render_template, request, redirect, url_for 
-import random  
+from flask import Flask, render_template
+import random   
 app = Flask(__name__, template_folder = "templates") 
-@app.route ("/home", methods=['GET', 'POST'])   
+@app.route ("/home")  
 def home (): 
-	if request.method == 'GET':  
-		return render_template("home.html") 
-	else: 
-		name = request.form['birthMN'] 
-		return redirect(url_for('fortune', name=name))   
+	return render_template("home.html") 
 
-@app.route("/fortune/<name>")    
-def fortune(name): 
+@app.route ("/fortune") 
+def fortune (): 
 	 possible_fortunes = ["You will get outstanding IN CS" , 
 	 "You are sentenced to IASA food FOR life", "You will catch Lilach the dragon" , 
 	 "You will be the best entrepreneurship instructor" , 
-	 "You will get the best meet laptop", "You are the NEXT Y3 lead",  
-	 "You will become a president one day", "You will own the biggest company in the world", 
+	 "You will get the best meet laptop", "You are the NEXT Y3 lead", 
+	 "You will become a president one day", "You will own the biggest company", 
 	 "You will strart a non-profit organization and help save the world by planting trees", 
 	 "You will have no wifi connection"]     
 	 random_number = random.randint(0,9) 
-	 index = len(name) 
-	 if index > 10:
-	 	return render_template("fortune.html", fortune = "Error, index number too high")   
-	 else : 
-	 	return render_template("fortune.html", fortune = possible_fortunes[index]) 
+	 return render_template("fortune.html", fortune = possible_fortunes[random_number])   
 
 
 
 
 
-
-# @app.route ("/indecisive")
-# def indecisive ():  
-# 		indecisive_fortunes = ["You will get outstanding IN CS" , 
-# 	 "You are sentenced to IASA food FOR life", "You will catch Lilach the dragon" , 
-# 	 "You will be the best entrepreneurship instructor" , 
-# 	 "You will get the best meet laptop", "You are the NEXT Y3 lead",  
-# 	 "You will become a president one day", "You will own the biggest company in the world", 
-# 	 "You will strart a non-profit organization and help save the world by planting trees", 
-# 	 "You will have no wifi connection"] 
-# 	  sample(random_number) = random.randint(0,9) 
- 
-# @app.route ("/design")
-# def design (): 
-# 	return '''<html> 
-# 		<img src = "https://t3.ftcdn.net/jpg/01/09/07/98/360_F_109079871_OigjZSPKSyTu7ap2nD3no18RjkLIH4eV.jpg" width = "400"> 
-# 		</html> ''' 
+if __name__== '__main__': 
+	app.run(debug=True) 
 
 
 
-
-
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
