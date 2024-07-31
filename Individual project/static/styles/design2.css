@@ -1,91 +1,48 @@
-
-body{
-    background-color: antiquewhite; 
-}
-h1{ 
-color : #0E3386; }
-
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  max-width: 600px;
-  margin: 50px auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
+h1 {
+    color: black;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
-header h1 {
-  font-size: 28px;
-  color: #333;
+h2 {
+    margin-bottom: 15px;
+    color : black ;
+} 
+
+.categories {
+    text-align: left;
 }
 
-main {
-  text-align: center;
+.categories a {
+    display: block;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-form {
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
-}
-
-.inp {
-    height:40px;
-    font-size:15pt;
-}
-
-form input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-p {
-  font-size: 14px;
-  color: #666;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+.categories a:hover {
+    background-color: #0056b3;
 }

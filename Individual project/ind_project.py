@@ -61,9 +61,13 @@ def signout ():
 
 @app.route("/home", methods = ['GET', 'POST']) 
 def home(): 
-  if request.method == 'POST': 
+  if request.method == 'POST':  
     return redirect(url_for('thanks')) 
-  return render_template('home.html') 
+  UID = login_session['user']['localId']
+  print(UID)
+  print(db.child("Users").child(UID).get().val())
+  username = db.child("Users").child(UID).get().val()["username"]
+  return render_template('home.html', username = username)  
 
 
 
